@@ -10,7 +10,7 @@ GRANT ALL PRIVILEGES ON ${SQL_DATABASE}.* TO '${SQL_USER}'@'%'
 	IDENTIFIED BY '${SQL_PASSWORD}';
 
 --# Change root password
-ALTER USER 'root'@'localhost' IDENTIFIED BY '${SQL_ROOT_PASSWORD}';
+ALTER USER 'root'@'localhost' IDENTIFIED BY '${ROOT_PASSWORD}';
 
 --# Refresh change
 FLUSH PRIVILEGES;

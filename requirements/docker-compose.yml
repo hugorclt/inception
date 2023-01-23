@@ -3,10 +3,10 @@ version: '3.2'
 services:
   mariadb42:
     container_name: mariadb
-    volumes:
-      - mariadb:/var/lib/mysql
     networks:
       - inception
+    volumes:
+      - mariadb:/var/lib/mysql
     build:
       context: mariadb
       dockerfile: Dockerfile
