@@ -1,16 +1,16 @@
 all			:	build
 
 build		:
-				docker-compose -f requirements/docker-compose.yml build
+				docker-compose -f srcs/docker-compose.yml build
 
 start		:
-				docker-compose -f requirements/docker-compose.yml start
+				docker-compose -f srcs/docker-compose.yml start
 
 up			:
-				docker-compose -f requirements/docker-compose.yml up
+				docker-compose -f srcs/docker-compose.yml up --detach
 
 stop		:
-				docker-compose -f requirements/docker-compose.yml stop
+				docker-compose -f srcs/docker-compose.yml stop
 
 purge		:
 				docker system prune -af
@@ -21,6 +21,8 @@ re 			:
 				make purge
 				sudo mkdir -p /Users/hrecolet/data/mariadb
 				sudo mkdir -p /Users/hrecolet/data/wordpress
+				make build
+				make up
 
 clean		:
-				docker-compose -f requirements/docker-compose.yml down -v
+				docker-compose -f srcs/docker-compose.yml down -v
