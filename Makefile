@@ -1,12 +1,13 @@
 all			:	build
 
 build		:
+				sudo mkdir -p /Users/hrecolet/data/mariadb
+				sudo mkdir -p /Users/hrecolet/data/wordpress
 				docker-compose -f srcs/docker-compose.yml build
 
-start		:
-				docker-compose -f srcs/docker-compose.yml start
-
 up			:
+				sudo mkdir -p /Users/hrecolet/data/mariadb
+				sudo mkdir -p /Users/hrecolet/data/wordpress
 				docker-compose -f srcs/docker-compose.yml up --detach
 
 stop		:
